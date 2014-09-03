@@ -43,7 +43,7 @@ function getMessages() {
 		contentType: "application/json",
 		dataType: "json",
 		type: 'GET',
-		success: function() {
+		success: function(data) {
 			console.log('get');
 			updateView(data);
 		},
@@ -58,7 +58,7 @@ function updateView(messages){
 	var table = $(".table tbody");
 	table.html('');
 	$.each(messages.results, function(index, value) {
-		var trEl $('<tr><td>'
+		var trEl = $('<tr><td>'
 			+ value.username
 			+ '</td><td>'
 			+ value.message
